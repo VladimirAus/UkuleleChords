@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.fret-space,
+.fret-note {
+	width: 30px;
+	height: 40px;
+	border: 1px solid #333;
+	float: left;
+	border: 1px solid transparent;
+}
+
+	.fret-space {
+		border: 1px solid #333;
+	}
+
+.fret-br {
+	clear: left;
+	border-bottom: none;
+	border-top: none;
+	border-left: none;
+}
+
+#fretboard-notes {
+	position: absolute;
+	margin-top: -30px;
+	margin-left: 26px;
+}
