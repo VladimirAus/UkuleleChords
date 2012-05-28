@@ -15,14 +15,34 @@ $(document).ready(function() {
 	];
 	
 	// Add options to select
+	//var firstChordName = '';
 	for (var i=0; i < chords.length; i++) {
 		var chordName = chords[i][0];
 		var opt = $("<option></option>").attr("value", i).text(chordName[0] + chordName[1] + chordName[2]);
 		$('#chord-select').append(opt);
+		
+		/*
+		if (i == 0) {
+			firstChordName = chordName[0] + chordName[1] + chordName[2];
+		}
+		*/
+		
 	}
+	
+	$('#chord-select').change();
+	drawNotes(chords[0][2]);
+	
+	/*
+	$("select#chord-select option").filter(function() {
+		//may want to use $.trim in here
+		return $(this).text() == firstChordName; 
+		//alert(firstChordName);
+	}).attr('selected', true);
+	*/
 	
 	// when chord changes
 	$('#chord-select').change(function() {
+		//alert(firstChordName);
 		drawNotes(chords[$(this).val()][2]);
 	});
 	
